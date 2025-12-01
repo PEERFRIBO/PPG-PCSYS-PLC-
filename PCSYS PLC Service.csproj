@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\PEFR\source\repos\PPG2025\PCSYS PLC Service.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{712FA39B-08B9-447C-8AC7-68F3C28EA9E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>PCSYS PLC Service</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.7.0</ApplicationVersion>
+    <LangVersion>latest</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>PCSYS_PLC_Service</RootNamespace>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sharp7Library">
+      <HintPath>..\..\..\PCSYS PLC Server\bin\Release\Sharp7Library.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Worker\BarcodeTools.cs" />
+    <Compile Include="Worker\DatabaseTools.cs" />
+    <Compile Include="Worker\LabelTools.cs" />
+    <Compile Include="Worker\Labelresult.cs" />
+    <Compile Include="Worker\PlcTools.cs" />
+    <Compile Include="PLCConnection\PlcConfig.cs" />
+    <Compile Include="PLCConnection\PlcConn.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\..\..\PPG2025\msvcr71.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCSYS Event Log\PCSYS Event Log.csproj">
+      <Project>{1062f3db-53a8-43f6-b99e-940371b3ef27}</Project>
+      <Name>PCSYS Event Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS Plc AppSettings\PCSYS Plc AppSettings.csproj">
+      <Project>{4a0b7d51-542d-4e2e-8bad-44d39f1f534c}</Project>
+      <Name>PCSYS Plc AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS PPG Info\PCSYS PPG Info.csproj">
+      <Project>{5af55ba1-0506-4902-8303-a6d6767cdf32}</Project>
+      <Name>PCSYS PPG Info</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS PPG LPS ProxyConnector\PCSYS PPG LPS ProxyConnector.csproj">
+      <Project>{8946ea1d-bdfc-4269-ac49-877a646b1e30}</Project>
+      <Name>PCSYS PPG LPS ProxyConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
