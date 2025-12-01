@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IBS_PrintService_Admin.Code.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IBS_PrintService_Admin.Code.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfIndexOptimizationSuggestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IndexOptimizationSuggestion" nillable="true" type="tns:IndexOptimizationSuggestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfIndexOptimizationSuggestion" nillable="true" type="tns:ArrayOfIndexOptimizationSuggestion" />
+  <xs:complexType name="IndexOptimizationSuggestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SuggestedIndex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IndexOptimizationSuggestion" nillable="true" type="tns:IndexOptimizationSuggestion" />
+</xs:schema>

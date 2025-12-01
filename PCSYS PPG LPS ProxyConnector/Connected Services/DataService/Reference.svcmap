@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e0b59a4e-4ccb-474a-8030-ba44d5db6ac4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8002/TECSYS/DATASERVICE " Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DATASERVICE.xsd" MetadataType="Schema" ID="b00c644f-f08f-4a33-add4-eb27898ce6c2" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd5" />
+    <MetadataFile FileName="DATASERVICE1.xsd" MetadataType="Schema" ID="31dae368-fb84-4830-96a6-7a2f8894beb3" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd2" />
+    <MetadataFile FileName="DATASERVICE2.xsd" MetadataType="Schema" ID="dbf57c9e-6400-44e1-a43b-217ee7f6d017" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd0" />
+    <MetadataFile FileName="DATASERVICE3.xsd" MetadataType="Schema" ID="2dc6c033-9bbd-4091-8b05-b8592d69c3c0" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd4" />
+    <MetadataFile FileName="DATASERVICE4.xsd" MetadataType="Schema" ID="712a7747-e028-4de3-a254-b9f3281c1d1d" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd3" />
+    <MetadataFile FileName="AppService.wsdl" MetadataType="Wsdl" ID="2d7fd355-13ae-4f46-8eaf-8781474a8f23" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?wsdl" />
+    <MetadataFile FileName="DATASERVICE5.xsd" MetadataType="Schema" ID="8efe7ad3-8e7a-40df-9b61-d939fb3882ed" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd7" />
+    <MetadataFile FileName="DATASERVICE6.xsd" MetadataType="Schema" ID="64fa2fb0-3477-4d8b-a7f3-4435e297bf6d" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd6" />
+    <MetadataFile FileName="DATASERVICE.disco" MetadataType="Disco" ID="245fd8f5-15ce-44ae-9c5b-337b3f180878" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?disco" />
+    <MetadataFile FileName="DATASERVICE7.xsd" MetadataType="Schema" ID="49add323-f7d8-40d8-b7b2-58c588dfdb78" SourceId="1" SourceUrl="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

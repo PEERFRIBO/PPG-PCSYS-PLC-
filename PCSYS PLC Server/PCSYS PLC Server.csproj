@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\PEFR\source\repos\PPG2025\PCSYS PLC Server.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{433ED8AD-BD27-4F6A-8150-A15BC4C161C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>PCSYS PLC Server</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.6.0</ApplicationVersion>
+    <LangVersion>latest</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>PCSYS_PLC_Server</RootNamespace>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ERPConnect40">
+      <HintPath>lib\ERPConnect40.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics4.Shared.v24.1, Version=24.1.20241.38, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.UltraWinGrid.v24.1, Version=24.1.20241.38, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="Infragistics4.Win.v24.1, Version=24.1.20241.38, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL" />
+    <Reference Include="PCSYSAppSettings, Version=5.1.2.0, Culture=neutral, PublicKeyToken=02d42d34ca393d25, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\PCSYSLPS\PCSYSAppSettings\bin\Release\PCSYSAppSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="PCSYSLpsTools">
+      <HintPath>lib\PCSYSLpsTools.dll</HintPath>
+    </Reference>
+    <Reference Include="PCSYSScanDataServers">
+      <HintPath>lib\PCSYSScanDataServers.dll</HintPath>
+    </Reference>
+    <Reference Include="PcsysLinkTools">
+      <HintPath>lib\PcsysLinkTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Sharp7Library">
+      <HintPath>..\..\..\PCSYS PLC Server\bin\Release\Sharp7Library.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormConstorePath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDestinationCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDirectPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInsertToConstore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLabelVariabelsMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPalletTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrinterCodes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrinters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrinterSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSAPServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSendFiledToSap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShowUrls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSsccCounters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="UserControls\UserControlLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControlSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Code\DataTools.cs" />
+    <Compile Include="Code\NativeMethods.cs" />
+    <Compile Include="Code\PlcConnection.cs" />
+    <Compile Include="Code\RawPrintApi.cs" />
+    <Compile Include="Code\Windows1252Encoding.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormConstorePath.resx" />
+    <EmbeddedResource Include="FormDestinationCodes.resx" />
+    <EmbeddedResource Include="FormDirectPrint.resx" />
+    <EmbeddedResource Include="FormInput.resx" />
+    <EmbeddedResource Include="FormInsertToConstore.resx" />
+    <EmbeddedResource Include="FormLabelVariabelsMapping.resx" />
+    <EmbeddedResource Include="FormMain.resx" />
+    <EmbeddedResource Include="FormPalletTypes.resx" />
+    <EmbeddedResource Include="FormPrinterCodes.resx" />
+    <EmbeddedResource Include="FormPrinters.resx" />
+    <EmbeddedResource Include="FormPrinterSettings.resx" />
+    <EmbeddedResource Include="FormReprint.resx" />
+    <EmbeddedResource Include="FormSAPServer.resx" />
+    <EmbeddedResource Include="FormSelectPrinter.resx" />
+    <EmbeddedResource Include="FormSendFiledToSap.resx" />
+    <EmbeddedResource Include="FormShowUrls.resx" />
+    <EmbeddedResource Include="FormSsccCounters.resx" />
+    <EmbeddedResource Include="FormUserInput.resx" />
+    <EmbeddedResource Include="PCSYS PLC Server\exe.licenses" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="UserControls\UserControlLogs.resx" />
+    <EmbeddedResource Include="UserControls\UserControlRegister.resx" />
+    <EmbeddedResource Include="UserControls\UserControlSettings.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCSYS Event Log\PCSYS Event Log.csproj">
+      <Project>{1062f3db-53a8-43f6-b99e-940371b3ef27}</Project>
+      <Name>PCSYS Event Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS Plc AppSettings\PCSYS Plc AppSettings.csproj">
+      <Project>{4a0b7d51-542d-4e2e-8bad-44d39f1f534c}</Project>
+      <Name>PCSYS Plc AppSettings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS PLC Service\PCSYS PLC Service.csproj">
+      <Project>{712fa39b-08b9-447c-8ac7-68f3c28ea9e4}</Project>
+      <Name>PCSYS PLC Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS PPG Info\PCSYS PPG Info.csproj">
+      <Project>{5af55ba1-0506-4902-8303-a6d6767cdf32}</Project>
+      <Name>PCSYS PPG Info</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCSYS PPG LPS ProxyConnector\PCSYS PPG LPS ProxyConnector.csproj">
+      <Project>{8946ea1d-bdfc-4269-ac49-877a646b1e30}</Project>
+      <Name>PCSYS PPG LPS ProxyConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

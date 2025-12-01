@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\PEFR\source\repos\PPG2025\PCSYS Plc AppSettings.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A0B7D51-542D-4E2E-8BAD-44D39F1F534C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>PCSYS Plc AppSettings</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <LangVersion>latest</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>PCSYS_Plc_AppSettings</RootNamespace>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PCSYS PPG LPS ProxyConnector">
+      <HintPath>..\PCSYS PPG LPS ProxyConnector\bin\Debug\PCSYS PPG LPS ProxyConnector.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SettingsTools.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="RegisterHelper.cs" />
+    <Compile Include="Pallet.cs" />
+    <Compile Include="Register.cs" />
+    <Compile Include="RegisterField.cs" />
+    <Compile Include="DataBlockName.cs" />
+    <Compile Include="RegisterType.cs" />
+    <Compile Include="RegisterStatus.cs" />
+    <Compile Include="FieldRegisterType.cs" />
+    <Compile Include="LineType.cs" />
+    <Compile Include="FieldType.cs" />
+    <Compile Include="DataType.cs" />
+    <Compile Include="FieldAccess.cs" />
+    <Compile Include="OrderField.cs" />
+    <Compile Include="UserInput.cs" />
+    <Compile Include="LineData.cs" />
+    <Compile Include="LineStatus.cs" />
+    <Compile Include="UserInputType.cs" />
+    <Compile Include="UserResponseStatus.cs" />
+    <Compile Include="UserInputResponse.cs" />
+    <Compile Include="PlcAction.cs" />
+    <Compile Include="DatabaseAction.cs" />
+    <Compile Include="MappingField.cs" />
+    <Compile Include="PlcActionStatus.cs" />
+    <Compile Include="PlcStatus.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

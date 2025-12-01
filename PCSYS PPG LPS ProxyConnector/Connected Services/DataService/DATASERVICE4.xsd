@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/IBS_Data_Service_4.DataServer" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/IBS_Data_Service_4.DataServer" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+  <xs:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.SqlServer.Dac.Model" />
+  <xs:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfConnectionManager.IBSExternalParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ConnectionManager.IBSExternalParameter" nillable="true" type="tns:ConnectionManager.IBSExternalParameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfConnectionManager.IBSExternalParameter" nillable="true" type="tns:ArrayOfConnectionManager.IBSExternalParameter" />
+  <xs:complexType name="ConnectionManager.IBSExternalParameter">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data" minOccurs="0" name="DataType" type="q1:DbType" />
+      <xs:element minOccurs="0" name="EmpytIsNull" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectionManager.IBSExternalParameter" nillable="true" type="tns:ConnectionManager.IBSExternalParameter" />
+  <xs:simpleType name="ConnectionManager.DataProvider">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="MSSQL" />
+      <xs:enumeration value="MSACCESS" />
+      <xs:enumeration value="ORACLE" />
+      <xs:enumeration value="MYSQL" />
+      <xs:enumeration value="OLEDB" />
+      <xs:enumeration value="ODBC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ConnectionManager.DataProvider" nillable="true" type="tns:ConnectionManager.DataProvider" />
+  <xs:complexType name="ArrayOfMappingField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MappingField" nillable="true" type="tns:MappingField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMappingField" nillable="true" type="tns:ArrayOfMappingField" />
+  <xs:complexType name="MappingField">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DestinationFieldName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceFileName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MappingField" nillable="true" type="tns:MappingField" />
+  <xs:complexType name="ArrayOfPrintLogInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PrintLogInfo" nillable="true" type="tns:PrintLogInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPrintLogInfo" nillable="true" type="tns:ArrayOfPrintLogInfo" />
+  <xs:complexType name="PrintLogInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FunctionName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsFinished" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsWarning" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LogActivityType" type="xs:int" />
+      <xs:element minOccurs="0" name="LogDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LogText" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PrintLogInfo" nillable="true" type="tns:PrintLogInfo" />
+  <xs:complexType name="ArrayOfTabelProperties">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TabelProperties" nillable="true" type="tns:TabelProperties" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTabelProperties" nillable="true" type="tns:ArrayOfTabelProperties" />
+  <xs:complexType name="TabelProperties">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.SqlServer.Dac.Model" minOccurs="0" name="DataType" type="q2:SqlDataType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TabelProperties" nillable="true" type="tns:TabelProperties" />
+  <xs:complexType name="SystemOptions.ByteArrayInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ByteArray" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FieldName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SystemOptions.ByteArrayInfo" nillable="true" type="tns:SystemOptions.ByteArrayInfo" />
+  <xs:complexType name="ServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Collation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Database" nillable="true" type="tns:DatabaseInfo" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Scripts" nillable="true" type="tns:ArrayOfScriptInfo" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerInfo" nillable="true" type="tns:ServerInfo" />
+  <xs:complexType name="DatabaseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Collation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DatabaseInfo" nillable="true" type="tns:DatabaseInfo" />
+  <xs:complexType name="ArrayOfScriptInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ScriptInfo" nillable="true" type="tns:ScriptInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfScriptInfo" nillable="true" type="tns:ArrayOfScriptInfo" />
+  <xs:complexType name="ScriptInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnsInfo" nillable="true" type="tns:ArrayOfColumnInfo" />
+      <xs:element minOccurs="0" name="Keys" nillable="true" type="tns:ArrayOfForeignKeyInfo" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Script" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ScriptType" type="tns:SqlTools.DatabaseTools.ScriptInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ScriptInfo" nillable="true" type="tns:ScriptInfo" />
+  <xs:complexType name="ArrayOfColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ColumnInfo" nillable="true" type="tns:ColumnInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColumnInfo" nillable="true" type="tns:ArrayOfColumnInfo" />
+  <xs:complexType name="ColumnInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataLength" type="xs:int" />
+      <xs:element minOccurs="0" name="DataType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Default" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsForeignKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsIdentity" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsPrimaryKey" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nulls" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ColumnInfo" nillable="true" type="tns:ColumnInfo" />
+  <xs:complexType name="ArrayOfForeignKeyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ForeignKeyInfo" nillable="true" type="tns:ForeignKeyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfForeignKeyInfo" nillable="true" type="tns:ArrayOfForeignKeyInfo" />
+  <xs:complexType name="ForeignKeyInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferencedKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReferencedTable" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ForeignKeyInfo" nillable="true" type="tns:ForeignKeyInfo" />
+  <xs:simpleType name="SqlTools.DatabaseTools.ScriptInfoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Table" />
+      <xs:enumeration value="View" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SqlTools.DatabaseTools.ScriptInfoType" nillable="true" type="tns:SqlTools.DatabaseTools.ScriptInfoType" />
+</xs:schema>

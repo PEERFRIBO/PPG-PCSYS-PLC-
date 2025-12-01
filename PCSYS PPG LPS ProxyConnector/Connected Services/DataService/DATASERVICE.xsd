@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.SqlServer.Dac.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.SqlServer.Dac.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="SqlDataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="BigInt" />
+      <xs:enumeration value="Int" />
+      <xs:enumeration value="SmallInt" />
+      <xs:enumeration value="TinyInt" />
+      <xs:enumeration value="Bit" />
+      <xs:enumeration value="Decimal" />
+      <xs:enumeration value="Numeric" />
+      <xs:enumeration value="Money" />
+      <xs:enumeration value="SmallMoney" />
+      <xs:enumeration value="Float" />
+      <xs:enumeration value="Real" />
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="SmallDateTime" />
+      <xs:enumeration value="Char" />
+      <xs:enumeration value="VarChar" />
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="NChar" />
+      <xs:enumeration value="NVarChar" />
+      <xs:enumeration value="NText" />
+      <xs:enumeration value="Binary" />
+      <xs:enumeration value="VarBinary" />
+      <xs:enumeration value="Image" />
+      <xs:enumeration value="Cursor" />
+      <xs:enumeration value="Variant" />
+      <xs:enumeration value="Table" />
+      <xs:enumeration value="Timestamp" />
+      <xs:enumeration value="UniqueIdentifier" />
+      <xs:enumeration value="Xml" />
+      <xs:enumeration value="Date" />
+      <xs:enumeration value="Time" />
+      <xs:enumeration value="DateTime2" />
+      <xs:enumeration value="DateTimeOffset" />
+      <xs:enumeration value="Rowversion" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SqlDataType" nillable="true" type="tns:SqlDataType" />
+</xs:schema>

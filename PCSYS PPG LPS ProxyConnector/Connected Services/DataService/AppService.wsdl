@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="AppService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd2" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/IBS_Data_Service_4.DataServer" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Microsoft.SqlServer.Dac.Model" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd6" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/IBS_PrintService_Admin.Code.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAppService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ServiceTest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceTest" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ServiceTest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceTestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataWithParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataWithParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataByStoredProcedure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByStoredProcedure" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataByStoredProcedure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataByStoredProcedureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_RestartDataService_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestartDataService" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_RestartDataService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestartDataServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetConnectionString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionString" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetConnectionString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConnectionStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataOut" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveData" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarInt" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarInt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarString_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarString" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_CheckConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckConnection" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_CheckConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ConnectionIsAlive_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectionIsAlive" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ConnectionIsAlive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectionIsAliveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetUserLogins_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLogins" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetUserLogins_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserLoginsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetPrintQueueInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintQueueInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetPrintQueueInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintQueueInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocument" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveUniCodeText_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUniCodeText" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SaveUniCodeText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUniCodeTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataForDataVariable_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForDataVariable" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetDataForDataVariable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataForDataVariableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteExternalDataWithParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternalDataWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteExternalDataWithParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternalDataWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_WriteToDatabaseLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToDatabaseLog" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_WriteToDatabaseLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToDatabaseLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_WriteToDatabaseLogServiceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToDatabaseLogServiceName" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_WriteToDatabaseLogServiceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteToDatabaseLogServiceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SqlCopyBulk_InputMessage">
+    <wsdl:part name="parameters" element="tns:SqlCopyBulk" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_SqlCopyBulk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SqlCopyBulkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetTabels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTabels" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetTabels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTabelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalScalarInt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalScalarInt" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalScalarInt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalScalarIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuery" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertQuiries_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuiries" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertQuiries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertQuiriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalData" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataWithParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataWithParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataByConnectionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataByConnectionId" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataByConnectionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataByConnectionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataByParametersByConnectionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataByParametersByConnectionId" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalDataByParametersByConnectionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalDataByParametersByConnectionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertPrintLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPrintLog" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_InsertPrintLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPrintLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteNonQueryWithParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteNonQueryWithParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteNonQueryWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarStringWithParameters_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarStringWithParameters" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_ExecuteScalarStringWithParameters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteScalarStringWithParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetTabelProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTabelProperties" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetTabelProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTabelPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalScalarString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalScalarString" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetExternalScalarString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExternalScalarStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetBytes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBytes" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetBytes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBytesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetScriptDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScriptDatabase" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetScriptDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScriptDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetSchemas_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemas" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetSchemas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetCurrentDatabaseInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentDatabaseInfo" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetCurrentDatabaseInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentDatabaseInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_TestExternalConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestExternalConnection" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_TestExternalConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestExternalConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetIndexOptimizationSuggestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexOptimizationSuggestions" />
+  </wsdl:message>
+  <wsdl:message name="IAppService_GetIndexOptimizationSuggestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndexOptimizationSuggestionsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAppService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetData" message="tns:IAppService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetDataResponse" message="tns:IAppService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceTest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ServiceTest" message="tns:IAppService_ServiceTest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ServiceTestResponse" message="tns:IAppService_ServiceTest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataWithParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetDataWithParameters" message="tns:IAppService_GetDataWithParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetDataWithParametersResponse" message="tns:IAppService_GetDataWithParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByStoredProcedure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetDataByStoredProcedure" message="tns:IAppService_GetDataByStoredProcedure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetDataByStoredProcedureResponse" message="tns:IAppService_GetDataByStoredProcedure_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestartDataService">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/RestartDataService" message="tns:IAppService_RestartDataService_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/RestartDataServiceResponse" message="tns:IAppService_RestartDataService_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetConnectionString" message="tns:IAppService_GetConnectionString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetConnectionStringResponse" message="tns:IAppService_GetConnectionString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetDataOut" message="tns:IAppService_GetDataOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetDataOutResponse" message="tns:IAppService_GetDataOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/SaveData" message="tns:IAppService_SaveData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/SaveDataResponse" message="tns:IAppService_SaveData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarInt" message="tns:IAppService_ExecuteScalarInt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarIntResponse" message="tns:IAppService_ExecuteScalarInt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarString" message="tns:IAppService_ExecuteScalarString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarStringResponse" message="tns:IAppService_ExecuteScalarString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteNonQuery" message="tns:IAppService_ExecuteNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteNonQueryResponse" message="tns:IAppService_ExecuteNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/CheckConnection" message="tns:IAppService_CheckConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/CheckConnectionResponse" message="tns:IAppService_CheckConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectionIsAlive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ConnectionIsAlive" message="tns:IAppService_ConnectionIsAlive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ConnectionIsAliveResponse" message="tns:IAppService_ConnectionIsAlive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLogins">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetUserLogins" message="tns:IAppService_GetUserLogins_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetUserLoginsResponse" message="tns:IAppService_GetUserLogins_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintQueueInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetPrintQueueInfo" message="tns:IAppService_GetPrintQueueInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetPrintQueueInfoResponse" message="tns:IAppService_GetPrintQueueInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/SaveDocument" message="tns:IAppService_SaveDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/SaveDocumentResponse" message="tns:IAppService_SaveDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUniCodeText">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/SaveUniCodeText" message="tns:IAppService_SaveUniCodeText_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/SaveUniCodeTextResponse" message="tns:IAppService_SaveUniCodeText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForDataVariable">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetDataForDataVariable" message="tns:IAppService_GetDataForDataVariable_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetDataForDataVariableResponse" message="tns:IAppService_GetDataForDataVariable_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternalDataWithParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteExternalDataWithParameters" message="tns:IAppService_ExecuteExternalDataWithParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteExternalDataWithParametersResponse" message="tns:IAppService_ExecuteExternalDataWithParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteToDatabaseLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/WriteToDatabaseLog" message="tns:IAppService_WriteToDatabaseLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/WriteToDatabaseLogResponse" message="tns:IAppService_WriteToDatabaseLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteToDatabaseLogServiceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/WriteToDatabaseLogServiceName" message="tns:IAppService_WriteToDatabaseLogServiceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/WriteToDatabaseLogServiceNameResponse" message="tns:IAppService_WriteToDatabaseLogServiceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SqlCopyBulk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/SqlCopyBulk" message="tns:IAppService_SqlCopyBulk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/SqlCopyBulkResponse" message="tns:IAppService_SqlCopyBulk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTabels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetTabels" message="tns:IAppService_GetTabels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetTabelsResponse" message="tns:IAppService_GetTabels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalScalarInt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalScalarInt" message="tns:IAppService_GetExternalScalarInt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalScalarIntResponse" message="tns:IAppService_GetExternalScalarInt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/InsertQuery" message="tns:IAppService_InsertQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/InsertQueryResponse" message="tns:IAppService_InsertQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuiries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/InsertQuiries" message="tns:IAppService_InsertQuiries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/InsertQuiriesResponse" message="tns:IAppService_InsertQuiries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalData" message="tns:IAppService_GetExternalData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalDataResponse" message="tns:IAppService_GetExternalData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataWithParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalDataWithParameters" message="tns:IAppService_GetExternalDataWithParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalDataWithParametersResponse" message="tns:IAppService_GetExternalDataWithParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataByConnectionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalDataByConnectionId" message="tns:IAppService_GetExternalDataByConnectionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalDataByConnectionIdResponse" message="tns:IAppService_GetExternalDataByConnectionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataByParametersByConnectionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalDataByParametersByConnectionId" message="tns:IAppService_GetExternalDataByParametersByConnectionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalDataByParametersByConnectionIdResponse" message="tns:IAppService_GetExternalDataByParametersByConnectionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPrintLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/InsertPrintLog" message="tns:IAppService_InsertPrintLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/InsertPrintLogResponse" message="tns:IAppService_InsertPrintLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQueryWithParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteNonQueryWithParameters" message="tns:IAppService_ExecuteNonQueryWithParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteNonQueryWithParametersResponse" message="tns:IAppService_ExecuteNonQueryWithParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarStringWithParameters">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarStringWithParameters" message="tns:IAppService_ExecuteScalarStringWithParameters_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/ExecuteScalarStringWithParametersResponse" message="tns:IAppService_ExecuteScalarStringWithParameters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTabelProperties">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetTabelProperties" message="tns:IAppService_GetTabelProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetTabelPropertiesResponse" message="tns:IAppService_GetTabelProperties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalScalarString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetExternalScalarString" message="tns:IAppService_GetExternalScalarString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetExternalScalarStringResponse" message="tns:IAppService_GetExternalScalarString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBytes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetBytes" message="tns:IAppService_GetBytes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetBytesResponse" message="tns:IAppService_GetBytes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScriptDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetScriptDatabase" message="tns:IAppService_GetScriptDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetScriptDatabaseResponse" message="tns:IAppService_GetScriptDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetSchemas" message="tns:IAppService_GetSchemas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetSchemasResponse" message="tns:IAppService_GetSchemas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDatabaseInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetCurrentDatabaseInfo" message="tns:IAppService_GetCurrentDatabaseInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetCurrentDatabaseInfoResponse" message="tns:IAppService_GetCurrentDatabaseInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestExternalConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/TestExternalConnection" message="tns:IAppService_TestExternalConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/TestExternalConnectionResponse" message="tns:IAppService_TestExternalConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexOptimizationSuggestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAppService/GetIndexOptimizationSuggestions" message="tns:IAppService_GetIndexOptimizationSuggestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAppService/GetIndexOptimizationSuggestionsResponse" message="tns:IAppService_GetIndexOptimizationSuggestions_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IAppService" type="tns:IAppService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceTest">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ServiceTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataWithParameters">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetDataWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataByStoredProcedure">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetDataByStoredProcedure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RestartDataService">
+      <soap:operation soapAction="http://tempuri.org/IAppService/RestartDataService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConnectionString">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetConnectionString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataOut">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetDataOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveData">
+      <soap:operation soapAction="http://tempuri.org/IAppService/SaveData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarInt">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteScalarInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarString">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteScalarString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckConnection">
+      <soap:operation soapAction="http://tempuri.org/IAppService/CheckConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConnectionIsAlive">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ConnectionIsAlive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserLogins">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetUserLogins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintQueueInfo">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetPrintQueueInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocument">
+      <soap:operation soapAction="http://tempuri.org/IAppService/SaveDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUniCodeText">
+      <soap:operation soapAction="http://tempuri.org/IAppService/SaveUniCodeText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataForDataVariable">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetDataForDataVariable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternalDataWithParameters">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteExternalDataWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteToDatabaseLog">
+      <soap:operation soapAction="http://tempuri.org/IAppService/WriteToDatabaseLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteToDatabaseLogServiceName">
+      <soap:operation soapAction="http://tempuri.org/IAppService/WriteToDatabaseLogServiceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SqlCopyBulk">
+      <soap:operation soapAction="http://tempuri.org/IAppService/SqlCopyBulk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTabels">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetTabels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalScalarInt">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalScalarInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuery">
+      <soap:operation soapAction="http://tempuri.org/IAppService/InsertQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertQuiries">
+      <soap:operation soapAction="http://tempuri.org/IAppService/InsertQuiries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalData">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataWithParameters">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalDataWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataByConnectionId">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalDataByConnectionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalDataByParametersByConnectionId">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalDataByParametersByConnectionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPrintLog">
+      <soap:operation soapAction="http://tempuri.org/IAppService/InsertPrintLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteNonQueryWithParameters">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteNonQueryWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteScalarStringWithParameters">
+      <soap:operation soapAction="http://tempuri.org/IAppService/ExecuteScalarStringWithParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTabelProperties">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetTabelProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExternalScalarString">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetExternalScalarString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBytes">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetBytes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScriptDatabase">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetScriptDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchemas">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetSchemas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentDatabaseInfo">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetCurrentDatabaseInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestExternalConnection">
+      <soap:operation soapAction="http://tempuri.org/IAppService/TestExternalConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndexOptimizationSuggestions">
+      <soap:operation soapAction="http://tempuri.org/IAppService/GetIndexOptimizationSuggestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AppService">
+    <wsdl:port name="BasicHttpBinding_IAppService" binding="tns:BasicHttpBinding_IAppService">
+      <soap:address location="http://pefr-zbook-w11:8002/TECSYS/DATASERVICE" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
